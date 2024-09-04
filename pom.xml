@@ -68,7 +68,7 @@
           </execution>
         </executions>
         <configuration>
-          <configLocation>../online_bookstore_my/checkstyle.xml</configLocation>
+          <configLocation>checkstyle.xml</configLocation>
           <consoleOutput>true</consoleOutput>
           <failsOnError>true</failsOnError>
           <linkXRef>false</linkXRef>
