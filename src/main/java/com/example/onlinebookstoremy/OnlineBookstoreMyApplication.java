@@ -1,4 +1,4 @@
-package com.example.online_bookstore_my;
+package com.example.onlinebookstoremy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class OnlineBookstoreMyApplication {
 
-  public static void main(String[] args) {
-    SpringApplication.run(OnlineBookstoreMyApplication.class, args);
-  }
+    public static void main(String[] args) {
+        SpringApplication.run(OnlineBookstoreMyApplication.class, args);
+    }
 
 }

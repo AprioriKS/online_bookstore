@@ -10,10 +10,10 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.example</groupId>
-  <artifactId>online_bookstore_my</artifactId>
+  <artifactId>onlinebookstoremy</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>online_bookstore_my</name>
-  <description>online_bookstore_my</description>
+  <name>onlinebookstoremy</name>
+  <description>onlinebookstoremy</description>
   <url/>
   <licenses>
     <license/>
@@ -68,7 +68,7 @@
           </execution>
         </executions>
         <configuration>
-          <configLocation>../mybook/online_bookstore_my/checkstyle.xml</configLocation>
+          <configLocation>../online_bookstore_my/checkstyle.xml</configLocation>
           <consoleOutput>true</consoleOutput>
           <failsOnError>true</failsOnError>
           <linkXRef>false</linkXRef>
