@@ -1,0 +1,8 @@
+package com.example.onlinebookstoremy.bookstore.exception;
+
+public class DataProcessingException extends RuntimeException {
+
+    public DataProcessingException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}
