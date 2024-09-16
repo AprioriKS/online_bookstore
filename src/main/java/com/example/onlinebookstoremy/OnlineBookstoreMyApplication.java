@@ -1,6 +1,7 @@
 package com.example.onlinebookstoremy;
 
 import com.example.onlinebookstoremy.bookstore.domain.entity.Book;
+import com.example.onlinebookstoremy.bookstore.mapper.BookMapper;
 import com.example.onlinebookstoremy.bookstore.service.BookService;
 import java.math.BigDecimal;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Bean;
 public class OnlineBookstoreMyApplication {
 
     private final BookService bookService;
+    private final BookMapper bookMapper;
 
     public static void main(String[] args) {
         SpringApplication.run(OnlineBookstoreMyApplication.class, args);
@@ -30,9 +32,6 @@ public class OnlineBookstoreMyApplication {
                     .description("Description")
                     .price(BigDecimal.TEN)
                     .build();
-
-            System.out.println("Save book result: " + bookService.save(testBook));
-            System.out.println("Find all books result" + bookService.findAll());
         };
     }
 
