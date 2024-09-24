@@ -1,4 +1,4 @@
-package com.example.onlinebookstoremy.bookstore.domain.entity.repository;
+package com.example.onlinebookstoremy.bookstore.domain.repository;
 
 import com.example.onlinebookstoremy.bookstore.domain.entity.Book;
 import java.util.List;
