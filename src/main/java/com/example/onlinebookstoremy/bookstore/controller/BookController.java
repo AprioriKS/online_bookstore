@@ -3,6 +3,7 @@ package com.example.onlinebookstoremy.bookstore.controller;
 import com.example.onlinebookstoremy.bookstore.dto.request.CreateBookRequestDto;
 import com.example.onlinebookstoremy.bookstore.dto.response.BookDto;
 import com.example.onlinebookstoremy.bookstore.service.BookService;
+import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,12 +32,12 @@ public class BookController {
     }
 
     @PostMapping
-    public BookDto create(@RequestBody CreateBookRequestDto bookDto) {
+    public BookDto create(@RequestBody @Valid CreateBookRequestDto bookDto) {
         return bookService.save(bookDto);
     }
 
     @PutMapping("/{id}")
-    public BookDto update(@RequestBody CreateBookRequestDto bookDto, @PathVariable Long id) {
+    public BookDto update(@RequestBody @Valid CreateBookRequestDto bookDto, @PathVariable Long id) {
         return bookService.update(bookDto, id);
     }
 
