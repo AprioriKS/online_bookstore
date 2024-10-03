@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateBookReauestDto {
+public class CreateBookRequestDto {
     @NotBlank
     private String title;
     @NotBlank
