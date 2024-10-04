@@ -1,5 +1,6 @@
 package com.example.onlinebookstoremy.bookstore.exception;
 
+import jakarta.persistence.EntityNotFoundException;
 import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -40,5 +41,15 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
             return field + ": " + message;
         }
         return e.getDefaultMessage();
+    }
+
+    public ResponseEntity<Object> handleEntityNotFoundException(EntityNotFoundException ex,
+            WebRequest request) {
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("timestamp", LocalDateTime.now());
+        body.put("status", HttpStatus.NOT_FOUND);
+        body.put("error", "Resource not found");
+        body.put("message", ex.getMessage());
+        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
 }

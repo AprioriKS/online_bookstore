@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: create-books-table
-      author: mateacademystudent
+      author: kostyabuhaiov
       changes:
         - createTable:
             tableName: books
@@ -31,7 +31,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: price
-                  type: java.math.BigDecimal
+                  type: DECIMAL(20, 2)
                   constraints:
                     nullable: false
               - column:
