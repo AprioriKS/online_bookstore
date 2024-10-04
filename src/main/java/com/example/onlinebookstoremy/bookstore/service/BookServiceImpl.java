@@ -6,8 +6,8 @@ import com.example.onlinebookstoremy.bookstore.dto.request.CreateBookRequestDto;
 import com.example.onlinebookstoremy.bookstore.dto.response.BookDto;
 import com.example.onlinebookstoremy.bookstore.exception.EntityNotFoundException;
 import com.example.onlinebookstoremy.bookstore.mapper.BookMapper;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -31,10 +31,9 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<BookDto> findAll(Pageable pageable) {
-        return bookRepository.findAll(pageable).stream()
-            .map(bookMapper::toDto)
-            .toList();
+    public Page<BookDto> findAll(Pageable pageable) {
+        Page<Book> page = bookRepository.findAll(pageable);
+        return page.map(book -> bookMapper.toDto(book));
     }
 
     @Override
