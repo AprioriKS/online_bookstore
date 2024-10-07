@@ -23,7 +23,7 @@ public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Obje
                 .getPropertyValue(firstFieldName);
         final Object secondFieldValue = new BeanWrapperImpl(value)
                 .getPropertyValue(secondFieldName);
-        toReturn = Objects.equals(firstFieldValue, secondFieldValue);
+        isFieldsEquals  = Objects.equals(firstFieldValue, secondFieldValue);
 
         if (!toReturn) {
             constraintValidatorContext.disableDefaultConstraintViolation();
