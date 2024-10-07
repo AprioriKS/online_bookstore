@@ -17,21 +17,21 @@ public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Obje
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext constraintValidatorContext) {
-        boolean toReturn;
+        boolean isFieldsEquals;
 
         final Object firstFieldValue = new BeanWrapperImpl(value)
                 .getPropertyValue(firstFieldName);
         final Object secondFieldValue = new BeanWrapperImpl(value)
                 .getPropertyValue(secondFieldName);
-        isFieldsEquals  = Objects.equals(firstFieldValue, secondFieldValue);
+        isFieldsEquals = Objects.equals(firstFieldValue, secondFieldValue);
 
-        if (!toReturn) {
+        if (!isFieldsEquals) {
             constraintValidatorContext.disableDefaultConstraintViolation();
             constraintValidatorContext
                     .buildConstraintViolationWithTemplate("The two fields are not equal.")
                     .addConstraintViolation();
         }
 
-        return toReturn;
+        return isFieldsEquals;
     }
 }
