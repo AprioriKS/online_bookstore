@@ -12,6 +12,9 @@ import lombok.Setter;
 @Setter
 public class CreateBookRequestDto {
     @NotBlank
+    private Long id;
+
+    @NotBlank
     private String title;
 
     @NotBlank
@@ -26,4 +29,7 @@ public class CreateBookRequestDto {
     private BigDecimal price;
     private String description;
     private String coverImage;
+
+    @NotNull
+    private boolean isDeleted;
 }
