@@ -1,19 +1,19 @@
 package com.example.onlinebookstoremy.bookstore.service;
 
 import com.example.onlinebookstoremy.bookstore.dto.request.CreateBookRequestDto;
-import com.example.onlinebookstoremy.bookstore.dto.response.BookDto;
+import com.example.onlinebookstoremy.bookstore.dto.response.BookResponseDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface BookService {
 
-    BookDto save(CreateBookRequestDto requestDto);
+    BookResponseDto save(CreateBookRequestDto requestDto);
 
-    BookDto findById(Long id);
+    BookResponseDto findById(Long id);
 
-    Page<BookDto> findAll(Pageable pageable);
+    Page<BookResponseDto> findAll(Pageable pageable);
 
-    BookDto update(CreateBookRequestDto requestDto, Long id);
+    BookResponseDto update(CreateBookRequestDto requestDto, Long id);
 
     void delete(Long id);
 }
