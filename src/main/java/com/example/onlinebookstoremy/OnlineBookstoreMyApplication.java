@@ -13,7 +13,6 @@ public class OnlineBookstoreMyApplication {
     private final BookService bookService;
     private final BookMapper bookMapper;
 
-    //for fix lag
     public static void main(String[] args) {
         SpringApplication.run(OnlineBookstoreMyApplication.class, args);
     }
